@@ -81,7 +81,9 @@ const Home = () => {
           </h1>
           <Slider {...settingss}>
             {tel?.slice(0, 5).map((e) => (
-              <AboutCard {...e} key={nanoid()} />
+              <Link to={`/single/${e.brand}/${e.id}`} key={nanoid()}>
+                <AboutCard {...e} />
+              </Link>
             ))}
           </Slider>
         </div>
@@ -137,7 +139,9 @@ const Home = () => {
           </h1>
           <Slider {...settingss}>
             {tel?.slice(0, 5).map((e) => (
-              <AboutCard {...e} key={nanoid()} />
+              <Link to={`/single/${e.brand}/${e.id}`} key={nanoid()}>
+                <AboutCard {...e} />
+              </Link>
             ))}
           </Slider>
         </div>
@@ -150,7 +154,9 @@ const Home = () => {
           </h1>
           <Slider {...settingss}>
             {laptop?.slice(0, 5).map((e) => (
-              <AboutCard {...e} key={nanoid()} />
+              <Link to={`/single/${e.brand}/${e.id}`} key={nanoid()}>
+                <AboutCard {...e} />
+              </Link>
             ))}
           </Slider>
         </div>

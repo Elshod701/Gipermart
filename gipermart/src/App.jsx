@@ -6,6 +6,7 @@ import About from "./pages/About/About";
 import Single from "./pages/Single/Single";
 import Cart from "./pages/Cart/Cart";
 import UseScroll from "./hooks/UseScroll";
+
 const App = () => {
   return (
     <>

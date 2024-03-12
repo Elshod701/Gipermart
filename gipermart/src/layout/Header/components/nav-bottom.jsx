@@ -25,15 +25,14 @@ const NavBottom = () => {
   };
 
   function handleSubmit(e) {
-    e.preventDefault();
-    let data = {
-      password: password,
-      number: number,
-    };
-    axios
-      .post("http://localhost:3000/users", { data })
+    request
+      .post("/users", {
+        password: password,
+        number: number,
+      })
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
+    e.preventDefault();
   }
   return (
     <>
@@ -77,7 +76,7 @@ const NavBottom = () => {
       <div>
         <div
           ref={inputRef}
-          className="div relative top-[-130px] right-[-50px] none"
+          className="div relative top-[-130px] right-[-50px] hidden"
         >
           <div
             id="login"
@@ -111,7 +110,7 @@ const NavBottom = () => {
                   <input
                     onChange={(e) => setPassword(e.target.value)}
                     className="login_input block w-[100%] mt-3 px-4 py-2 border-solid border-[#808080 2px] outline-none text-xl"
-                    type="password"
+                    type="new-password"
                     placeholder="Enter password"
                   />
                 </label>
