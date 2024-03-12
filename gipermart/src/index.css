@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth !important;
+  margin: 0;
+  padding: 0;
+  font-family: "Jost-400";
+}
+
+@font-face {
+  font-family: "Jost-400";
+  src: url(../src/assets/fonts/static/Jost-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Jost-500";
+  src: url(../src/assets/fonts/static/Jost-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Jost-600";
+  src: url(../src/assets/fonts/static/Jost-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Jost-700";
+  src: url(../src/assets/fonts/static/Jost-Bold.ttf);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1430px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%);
+  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.507);
+  z-index: 1111;
+}
+
+#categ-card:hover {
+  background: #ececec;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+
+#categ-card {
+  width: 261px;
+  height: 124px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 16px 14px 16px;
+  gap: 12px;
+  background: #f6f6f6;
+  border-radius: 8px;
+}
+
+#categ-card:hover #categ-img {
+  transition: all 0.2s ease;
+  transform: scale(1.05);
+}
+
+.slick-arrow {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slick-next::before {
+  outline: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+}
+
+.slick-next::before:hover {
+  outline: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+}
+
+.slick-prev::before {
+  outline: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+}
+
+.slick-prev::before:hover {
+  outline: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+}
+
+#login {
+  z-index: 2222;
+}
+
+.login_input {
+  box-sizing: border-box;
+  border: 1px solid rgb(128, 128, 128);
+  background: rgb(255, 255, 255);
+}
