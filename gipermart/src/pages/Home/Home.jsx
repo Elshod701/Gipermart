@@ -13,6 +13,7 @@ import { useGetLaptop } from "../../service/query/useGetLaptop";
 import { useGetBrands } from "../../service/query/useGetBrands";
 import { BrandCard } from "./HomeCards/BrandCard";
 
+
 const Home = () => {
   const { data: banner } = useGetAllBanner();
   const { data: category } = useGetCategory();

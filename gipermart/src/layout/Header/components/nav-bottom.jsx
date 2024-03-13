@@ -1,4 +1,6 @@
 import React from "react";
+import logo from "../../../assets/icons/logo.svg";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
 import { IoMdSearch } from "react-icons/io";
@@ -8,13 +10,21 @@ import { RiShoppingCart2Line } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 import { useRef } from "react";
 import { request } from "../../../config/request";
-import logo from "../../../assets/icons/logo.svg";
-import axios from "axios";
-
+import { Modal } from "../../../components/Modal/Modal";
 const NavBottom = () => {
   const inputRef = useRef();
   const [number, setNumber] = React.useState("");
   const [password, setPassword] = React.useState("");
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const handleHide = () => {
     inputRef.current.style.display = "none";
@@ -34,6 +44,7 @@ const NavBottom = () => {
       .catch((err) => console.log(err));
     e.preventDefault();
   }
+
   return (
     <>
       <div className="nav-bottom py-4 flex items-center justify-between">
@@ -42,7 +53,10 @@ const NavBottom = () => {
             <img src={logo} alt="My Logo" />
           </div>
         </Link>
-        <button className="flex items-center gap-2 py-3 px-3 bg-[#FEEE00] w-[150px] hover:bg-yellow-200">
+        <button
+          onClick={openModal}
+          className="flex items-center gap-2 py-3 px-3 bg-[#FEEE00] w-[150px] hover:bg-yellow-200"
+        >
           <IoMenu />
           <p className="text-xl">Каталог</p>
         </button>
@@ -128,6 +142,7 @@ const NavBottom = () => {
           </div>
         </div>
       </div>
+      <Modal isOpen={isModalOpen} onClose={closeModal} />
     </>
   );
 };
